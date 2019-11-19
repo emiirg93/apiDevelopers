@@ -17,14 +17,18 @@ public class Developer {
     private Long id;
     private String firstName;
     private String lastName;
+    private Long edad;
+    private String espacialidad;
     private String description;
 
     public Developer() {
     }
 
-    public Developer(String firstName, String lastName, String description) {
+    public Developer(String firstName, String lastName, Long edad, String espacialidad, String description) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.edad = edad;
+        this.espacialidad = espacialidad;
         this.description = description;
     }
 
@@ -56,11 +60,29 @@ public class Developer {
         this.description = description;
     }
 
+    public Long getEdad() {
+        return edad;
+    }
+
+    public void setEdad(Long edad) {
+        this.edad = edad;
+    }
+
+    public String getEspacialidad() {
+        return espacialidad;
+    }
+
+    public void setEspacialidad(String espacialidad) {
+        this.espacialidad = espacialidad;
+    }
+
     public Map<String,Object> makeDeveloperDTO(){
         Map<String, Object> dto = new LinkedHashMap<String, Object>();
         dto.put("id",this.getId());
         dto.put("nombre",this.getFirstName());
         dto.put("apellido",this.getLastName());
+        dto.put("edad",this.getEdad());
+        dto.put("especialidad",this.getEspacialidad());
         dto.put("descripcion",this.getDescription());
 
         return dto;
