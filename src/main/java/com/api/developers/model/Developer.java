@@ -15,49 +15,41 @@ public class Developer {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
     private Long id;
-    private String firstName;
-    private String lastName;
+    private String nombre;
+    private String apellido;
     private Long edad;
-    private String espacialidad;
-    private String description;
+    private String especialidad;
+    private String descripcion;
 
     public Developer() {
     }
 
-    public Developer(String firstName, String lastName, Long edad, String espacialidad, String description) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Developer(String nombre, String apellido, Long edad, String especialidad, String descripcion) {
+        this.nombre = nombre;
+        this.apellido = apellido;
         this.edad = edad;
-        this.espacialidad = espacialidad;
-        this.description = description;
+        this.especialidad = especialidad;
+        this.descripcion = descripcion;
     }
 
     public Long getId() {
         return id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     public Long getEdad() {
@@ -68,23 +60,19 @@ public class Developer {
         this.edad = edad;
     }
 
-    public String getEspacialidad() {
-        return espacialidad;
+    public String getEspecialidad() {
+        return especialidad;
     }
 
-    public void setEspacialidad(String espacialidad) {
-        this.espacialidad = espacialidad;
+    public void setEspecialidad(String especialidad) {
+        this.especialidad = especialidad;
     }
 
-    public Map<String,Object> makeDeveloperDTO(){
-        Map<String, Object> dto = new LinkedHashMap<String, Object>();
-        dto.put("id",this.getId());
-        dto.put("nombre",this.getFirstName());
-        dto.put("apellido",this.getLastName());
-        dto.put("edad",this.getEdad());
-        dto.put("especialidad",this.getEspacialidad());
-        dto.put("descripcion",this.getDescription());
+    public String getDescripcion() {
+        return descripcion;
+    }
 
-        return dto;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 }
